@@ -1,5 +1,5 @@
 AVIDEMUX_VERSION=	2.8.2
-PORTREVISION=	7
+PORTREVISION=	9
 DISTNAME=	avidemux_${PORTVERSION}
 
 BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
@@ -24,10 +24,12 @@ USES=		cmake:noninja pkgconfig iconv gmake compiler:features sqlite
 USES+=		dos2unix gnome
 USE_GNOME=	libxml2
 
+DISABLE_VULNERABILITIES=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mean00
 GH_PROJECT=	${PORTNAME}2
-GH_TAGNAME=	ee80e83
+GH_TAGNAME=	7805f1d
 
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
@@ -63,7 +65,7 @@ FRIBIDI_CMAKE_OFF=	-DFRIBIDI:BOOL=OFF
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 OPUS_CMAKE_OFF=		-DOPUS:BOOL=OFF -DOPUS_ENCODER:BOOL=OFF
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-GH_TUPLE+=	mean00:${PORTNAME}2_i18n:b91c7f7:qt6/avidemux/qt4/i18n
+GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt6/avidemux/qt4/i18n
 TWOLAME_CMAKE_OFF=	-DTWOLAME:BOOL=OFF
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
