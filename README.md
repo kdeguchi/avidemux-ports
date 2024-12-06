@@ -4,3 +4,9 @@ I have created FreeBSD ports for latest Avidemux (https://github.com/mean00/avid
 
 You can download these files and overwrite ports tree, or use ports overlays method.
 I recommend using ports overlays method.
+
+## ports overlay method
+
+Add in your `/etc/make.conf` as follows:
+
+`OVERLAYS+=/your/download/directory/avidemux-ports`
