@@ -76,9 +76,9 @@ OPTIONS_DEFAULT+=	LAME FAAC AMR X264
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQT6}
+.if ${PORT_OPTIONS:MQT6} && !${PORT_OPTIONS:MQT5}
 GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt6/avidemux/qt4/i18n
-.elif ${PORT_OPTIONS:MQT5}
+.elif ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MQT6}
 GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt5/avidemux/qt4/i18n
 .endif
 
@@ -104,7 +104,7 @@ CMAKE_ARGS+=	-DX11:BOOL=OFF
 USE_GNOME+=	libxslt
 .endif
 
-.if ${PORT_OPTIONS:MQT6}
+.if ${PORT_OPTIONS:MQT6} && !${PORT_OPTIONS:MQT5}
 USES+=		gl qt:6 xorg
 USE_GL=		gl glu
 USE_QT=		base tools:build
@@ -113,8 +113,9 @@ CMAKE_ARGS+=	-DENABLE_QT6:BOOL=ON
 CMAKE_ARGS+=	-DQT_EXTENSION:STRING=qt6
 PATH:=	${LOCALBASE}/${QT_BINDIR_REL}:${PATH}
 CFLAGS+=	-fPIC
+PLIST_SUB+=	QT5="@comment "
 PLIST_SUB+=	QT6=""
-.elif ${PORT_OPTIONS:MQT5}
+.elif ${PORT_OPTIONS:MQT5} && !${PORT_OPTIONS:MQT6}
 USES+=	gl qt:5 xorg
 USE_GL=	gl glu
 USE_QT=	core gui network widgets \
@@ -123,10 +124,11 @@ USE_XORG=	x11
 CMAKE_ARGS+=	-DENABLE_QT5:BOOL=ON
 CMAKE_ARGS+=	-DQT_EXTENSION:STRING=qt5
 PLIST_SUB+=	QT5=""
+PLIST_SUB+=	QT6="@comment "
 .else
 CMAKE_ARGS+=	-DQT4:BOOL=OFF
-PLIST_SUB+=	QT6="@comment "
 PLIST_SUB+=	QT5="@comment "
+PLIST_SUB+=	QT6="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCLI}
