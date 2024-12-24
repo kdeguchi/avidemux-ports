@@ -67,7 +67,11 @@ FRIBIDI_CMAKE_OFF=	-DFRIBIDI:BOOL=OFF
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 OPUS_CMAKE_OFF=		-DOPUS:BOOL=OFF -DOPUS_ENCODER:BOOL=OFF
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+.if ${PORT_OPTIONS:MQT6}
 GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt6/avidemux/qt4/i18n
+.elif ${PORT_OPTIONS:MQT5}
+GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt5/avidemux/qt4/i18n
+.endif
 TWOLAME_CMAKE_OFF=	-DTWOLAME:BOOL=OFF
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
