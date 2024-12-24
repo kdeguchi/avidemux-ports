@@ -28,6 +28,10 @@ PLUGIN_UI+=	CLI
 BUILD_DEPENDS+=	avidemux-qt6>0:multimedia/avidemux-qt6
 RUN_DEPENDS+=	avidemux-qt6>0:multimedia/avidemux-qt6
 PLUGIN_UI+=	QT4
+.elif ${PORT_OPTIONS:MQT5}
+BUILD_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
+RUN_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
+PLUGIN_UI+=	QT4
 .endif
 
 CMAKE_ARGS+=	-DPLUGIN_UI="${PLUGIN_UI}"
