@@ -107,7 +107,7 @@ USE_GNOME+=	libxslt
 .if ${PORT_OPTIONS:MQT6}
 USES+=		gl qt:6 xorg
 USE_GL=		gl glu
-USE_QT=		base
+USE_QT=		base tools:build
 USE_XORG=	x11
 CMAKE_ARGS+=	-DENABLE_QT6:BOOL=ON
 CMAKE_ARGS+=	-DQT_EXTENSION:STRING=qt6
