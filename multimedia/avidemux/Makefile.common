@@ -102,7 +102,7 @@ CMAKE_ARGS+=	-DX11:BOOL=OFF
 USE_GNOME+=	libxslt
 .endif
 
-.if ${PORT_OPTIONS:MQT6} && !${PORT_OPTIONS:MQT5}
+.if ${PORT_OPTIONS:MQT6}
 USES+=		gl qt:6 xorg
 USE_GL=		gl glu
 USE_QT=		base tools:build
@@ -113,7 +113,7 @@ PATH:=	${LOCALBASE}/${QT_BINDIR_REL}:${PATH}
 CFLAGS+=	-fPIC
 PLIST_SUB+=	QT5="@comment "
 PLIST_SUB+=	QT6=""
-.elif ${PORT_OPTIONS:MQT5} && !${PORT_OPTIONS:MQT6}
+.elif ${PORT_OPTIONS:MQT5}
 USES+=	gl qt:5 xorg
 USE_GL=	gl glu
 USE_QT=	core gui network widgets \
