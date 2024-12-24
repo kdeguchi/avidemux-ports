@@ -10,6 +10,7 @@ LIB_DEPENDS=	libADM6avutil.so.${AVUTIL_VERSION}:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist
+PLIST_SUB=	QT_VER=${_QT_VER}
 
 .include "${MASTERDIR}/Makefile.common"
 

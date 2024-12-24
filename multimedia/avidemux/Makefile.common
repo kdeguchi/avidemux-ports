@@ -76,10 +76,8 @@ OPTIONS_DEFAULT+=	LAME FAAC AMR X264
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQT6} && !${PORT_OPTIONS:MQT5}
-GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt6/avidemux/qt4/i18n
-.elif ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MQT6}
-GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt5/avidemux/qt4/i18n
+.if ${PORT_OPTIONS:MQT5} || ${PORT_OPTIONS:MQT6}
+GH_TUPLE+=	mean00:${PORTNAME}2_i18n:05a39a1:qt/avidemux/qt4/i18n
 .endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
