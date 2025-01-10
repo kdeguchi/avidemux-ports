@@ -29,7 +29,7 @@ DISABLE_VULNERABILITIES=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	mean00
 GH_PROJECT=	${PORTNAME}2
-GH_TAGNAME=	7a63678
+GH_TAGNAME=	3006ef0
 
 DOS2UNIX_FILES=	avidemux_core/cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
