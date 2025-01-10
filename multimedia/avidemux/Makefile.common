@@ -31,7 +31,7 @@ GH_ACCOUNT=	mean00
 GH_PROJECT=	${PORTNAME}2
 GH_TAGNAME=	7a63678
 
-DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
+DOS2UNIX_FILES=	avidemux_core/cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_ffmp43.h
 CMAKE_ARGS+=	-DGNUMAKE_EXECUTABLE=gmake
@@ -336,7 +336,7 @@ post-extract:
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
-	@${FIND} ${WRKSRC}/cmake -name '*.cmake.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.cmake.orig' -delete
 
 post-patch-QT6-on:
 	@${REINPLACE_CMD} -e 's@avidemux3_qt5@avidemux3_qt6@;' \

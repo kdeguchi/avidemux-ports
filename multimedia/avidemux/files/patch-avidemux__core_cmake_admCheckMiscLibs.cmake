@@ -1,5 +1,5 @@
---- cmake/admCheckMiscLibs.cmake.orig	2019-12-14 18:40:01 UTC
-+++ cmake/admCheckMiscLibs.cmake
+--- avidemux_core/cmake/admCheckMiscLibs.cmake.orig	2019-12-14 18:40:01 UTC
++++ avidemux_core/cmake/admCheckMiscLibs.cmake
 @@ -69,7 +69,7 @@ ENDIF (UNIX AND NOT APPLE)
  MESSAGE(STATUS "Checking for execinfo")
  MESSAGE(STATUS "*********************")
