@@ -336,7 +336,7 @@ post-extract:
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
-	@${FIND} ${WRKSRC} -name '*.cmake.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-patch-QT6-on:
 	@${REINPLACE_CMD} -e 's@avidemux3_qt5@avidemux3_qt6@;' \
