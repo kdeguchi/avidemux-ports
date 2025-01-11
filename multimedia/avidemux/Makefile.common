@@ -203,6 +203,7 @@ PLIST_SUB+=	LAME="@comment "
 
 .if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	libfaad.so:audio/faad
+CMAKE_ARGS+=	-DFAAD_INCLUDE_DIR=${LOCALBASE}/include
 PLIST_SUB+=	FAAD=""
 .else
 CMAKE_ARGS+=	-DFAAD:BOOL=OFF
