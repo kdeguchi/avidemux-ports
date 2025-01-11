@@ -1,6 +1,8 @@
 %%VAPOURSYNTH%%bin/vsProxy
 %%VAPOURSYNTH%%%%QT5%%bin/vsProxy_gui_qt5
 %%VAPOURSYNTH%%%%QT6%%bin/vsProxy_gui_qt6
+include/avidemux/2.8/dummy_cli/FindAlsa.cmake
+include/avidemux/2.8/dummy_qt4/FindAlsa.cmake
 lib/ADM_plugins6/audioDecoder/libADM_ad_Mad.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_a52.so
 lib/ADM_plugins6/audioDecoder/libADM_ad_alaw.so
@@ -54,7 +56,6 @@ lib/ADM_plugins6/muxers/libADM_mx_flv.so
 lib/ADM_plugins6/muxers/libADM_mx_mkv.so
 lib/ADM_plugins6/muxers/libADM_mx_mov.so
 lib/ADM_plugins6/muxers/libADM_mx_mp4.so
-lib/ADM_plugins6/muxers/libADM_mx_mp4v2.so
 lib/ADM_plugins6/muxers/libADM_mx_raw.so
 lib/ADM_plugins6/muxers/libADM_mx_webm.so
 %%X264%%lib/ADM_plugins6/pluginSettings/x264/3/Mezzanine.json
@@ -95,8 +96,8 @@ lib/ADM_plugins6/videoEncoders/libADM_ve_utvideo.so
 %%XVID%%lib/ADM_plugins6/videoEncoders/libADM_ve_xvid4.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_yv12.so
 %%X264%%%%QT5%%lib/ADM_plugins6/videoEncoders/qt5/libADM_ve_x264_QT5.so
-%%X264%%%%QT6%%lib/ADM_plugins6/videoEncoders/qt6/libADM_ve_x264_QT6.so
 %%X265%%%%QT5%%lib/ADM_plugins6/videoEncoders/qt5/libADM_ve_x265_QT5.so
+%%X264%%%%QT6%%lib/ADM_plugins6/videoEncoders/qt6/libADM_ve_x264_QT6.so
 %%X265%%%%QT6%%lib/ADM_plugins6/videoEncoders/qt6/libADM_ve_x265_QT6.so
 %%CLI%%lib/ADM_plugins6/videoFilters/cli/libADM_vf_CropCli.so
 %%CLI%%lib/ADM_plugins6/videoFilters/cli/libADM_vf_HueCli.so
