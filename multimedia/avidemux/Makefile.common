@@ -205,7 +205,7 @@ PLIST_SUB+=	LAME="@comment "
 LIB_DEPENDS+=	libfaad.so:audio/faad
 PLIST_SUB+=	FAAD=""
 .else
-CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
+CMAKE_ARGS+=	-DFAAD:BOOL=OFF
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
