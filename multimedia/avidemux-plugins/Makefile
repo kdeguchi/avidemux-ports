@@ -16,7 +16,7 @@ PLIST_SUB=	QT_VER=${_QT_VER}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/avidemux_plugins
 
-CMAKE_ARGS+=	-DAVIDEMUX_SOURCE_DIR=${WRKSRC} -DAVIDEMUX_INSTALL_PREFIX:PATH="${PREFIX}" -DCMAKE_MODULE_PATH=${WRKSRC}/avidemux/cmake
+CMAKE_ARGS+=	-DAVIDEMUX_SOURCE_DIR=${WRKSRC} -DAVIDEMUX_INSTALL_PREFIX:PATH="${PREFIX}"
 PLUGIN_UI=	COMMON SETTINGS
 
 .if ${PORT_OPTIONS:MCLI}
@@ -29,9 +29,11 @@ PLUGIN_UI+=	CLI
 BUILD_DEPENDS+=	avidemux-qt6>0:multimedia/avidemux-qt6
 RUN_DEPENDS+=	avidemux-qt6>0:multimedia/avidemux-qt6
 PLUGIN_UI+=	QT4
+CMAKE_ARGS+=	-DCMAKE_MODULE_PATH=${WRKSRC}/avidemux/qt4/cmake
 .elif ${PORT_OPTIONS:MQT5}
 BUILD_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
 RUN_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
+CMAKE_ARGS+=	-DCMAKE_MODULE_PATH=${WRKSRC}/avidemux/qt4/cmake
 PLUGIN_UI+=	QT4
 .endif
 
