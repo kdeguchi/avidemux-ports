@@ -144,6 +144,7 @@ CMAKE_ARGS+=	-DOSS:BOOL=OFF -DOSS_SUPPORT:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
+CMAKE_ARGS+=	-DJACK:BOOL=ON
 LIB_DEPENDS+=	libjack.so:audio/jack
 PLIST_SUB+=	JACK=""
 .else
@@ -152,6 +153,7 @@ PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
+CMAKE_ARGS+=    -DPULSEAUDIOSIMPLE:BOOL=ON
 LIB_DEPENDS+=   libpulse.so:audio/pulseaudio
 PLIST_SUB+=     PULSEAUDIO=""
 .else
@@ -160,6 +162,7 @@ PLIST_SUB+=     PULSEAUDIO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFDK}
+CMAKE_ARGS+=	-DFDK_AAC:BOOL=ON
 LIB_DEPENDS+=	libfdk-aac.so:audio/fdk-aac
 PLIST_SUB+=	FDK=""
 .else
@@ -168,18 +171,21 @@ PLIST_SUB+=	FDK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
+CMAKE_ARGS+=	-DFREETYPE2:BOOL=ON
 LIB_DEPENDS+=	libfreetype.so:print/freetype2
 .else
 CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
+CMAKE_ARGS+=	-DFONTCONFIG:BOOL=ON
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 .else
 CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MXVIDEO}
+CMAKE_ARGS+=	-DXVIDEO:BOOL=ON
 USES+=		xorg
 USE_XORG+=	xv xext
 .else
@@ -187,6 +193,7 @@ CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
+CMAKE_ARGS+=	-DFAAC:BOOL=ON
 LIB_DEPENDS+=	libfaac.so:audio/faac
 PLIST_SUB+=	FAAC=""
 .else
@@ -195,6 +202,7 @@ PLIST_SUB+=	FAAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
+CMAKE_ARGS+=	-DLAME:BOOL=ON
 LIB_DEPENDS+=	libmp3lame.so:audio/lame
 PLIST_SUB+=	LAME=""
 .else
@@ -203,6 +211,7 @@ PLIST_SUB+=	LAME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
+CMAKE_ARGS+=	-DFAAD:BOOL=ON
 LIB_DEPENDS+=	libfaad.so:audio/faad
 PLIST_SUB+=	FAAD=""
 .else
@@ -211,6 +220,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX264}
+CMAKE_ARGS+=	-DX264:BOOL=ON
 LIB_DEPENDS+=	libx264.so:multimedia/libx264
 PLIST_SUB+=	X264=""
 .else
@@ -219,6 +229,7 @@ PLIST_SUB+=	X264="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX265}
+CMAKE_ARGS+=	-DX265:BOOL=ON
 LIB_DEPENDS+=	libx265.so:multimedia/x265
 PLIST_SUB+=	X265=""
 .else
@@ -227,6 +238,7 @@ PLIST_SUB+=	X265="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVPX}
+CMAKE_ARGS+=	-DVPXDEC:BOOL=ON -DVPXENC:BOOL=ON
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 PLIST_SUB+=	VPX=""
 .else
@@ -235,6 +247,7 @@ PLIST_SUB+=	VPX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBASS}
+CMAKE_ARGS+=	-DLIBASS:BOOL=ON
 LIB_DEPENDS+=	libass.so:multimedia/libass
 PLIST_SUB+=	LIBASS=""
 .else
@@ -243,6 +256,7 @@ PLIST_SUB+=	LIBASS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAOM}
+CMAKE_ARGS+=	-DAOMDEC:BOOL=ON
 LIB_DEPENDS+=	libaom.so:multimedia/aom
 PLIST_SUB+=	AOM=""
 .else
@@ -251,6 +265,7 @@ PLIST_SUB+=	AOM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
+CMAKE_ARGS+=	-DXVID:BOOL=ON
 LIB_DEPENDS+=	libxvidcore.so:multimedia/xvid
 PLIST_SUB+=	XVID=""
 .else
@@ -259,6 +274,7 @@ PLIST_SUB+=	XVID="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTINYPY}
+CMAKE_ARGS+=	-DTINYPY:BOOL=ON
 PLIST_SUB+=	TINYPY=""
 .else
 CMAKE_ARGS+=	-DTINYPY:BOOL=OFF
@@ -266,6 +282,7 @@ PLIST_SUB+=	TINYPY="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDCA}
+CMAKE_ARGS+=	-DLIBDCA:BOOL=ON
 LIB_DEPENDS+=	libdca.so:multimedia/libdca
 PLIST_SUB+=	DCA=""
 .else
@@ -274,6 +291,7 @@ PLIST_SUB+=	DCA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVAPOURSYNTH}
+CMAKE_ARGS+=	-DVAPOURSYNTH:BOOL=ON
 LIB_DEPENDS+=	libva.so:multimedia/libva \
 				libvdpau.so:multimedia/libvdpau \
 				libvapoursynth.so:multimedia/vapoursynth
@@ -295,6 +313,7 @@ PLIST_SUB+=	VAAPI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU}
+CMAKE_ARGS+=	-DVDPAU:BOOL=ON
 LIB_DEPENDS+=	libvdpau.so:multimedia/libvdpau
 PLIST_SUB+=	VDPAU=""
 .else
@@ -303,6 +322,7 @@ PLIST_SUB+=	VDPAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
+CMAKE_ARGS+=	-DLIBVORBIS:BOOL=ON -DVORBIS:BOOL=ON
 LIB_DEPENDS+=	libvorbis.so:audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
@@ -311,6 +331,8 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAMR}
+CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=ON
+CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=ON
 LIB_DEPENDS+=	libopencore-amrnb.so:audio/opencore-amr
 PLIST_SUB+=	AMRNB=""
 PLIST_SUB+=	AMRWB=""
@@ -322,6 +344,7 @@ PLIST_SUB+=	AMRWB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNVENC}
+CMAKE_ARGS+=	-DNVENC:BOOL=ON
 BUILD_DEPENDS+=	${LOCALBASE}/include/ffnvcodec/nvEncodeAPI.h:multimedia/ffnvcodec-headers
 PLIST_SUB+=	NVENC=""
 .else
