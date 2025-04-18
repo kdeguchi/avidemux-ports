@@ -73,8 +73,8 @@ lib/ADM_plugins6/muxers/libADM_mx_webm.so
 %%QT6%%lib/ADM_plugins6/shaderDemo/1/lightning.shader
 %%QT6%%lib/ADM_plugins6/shaderDemo/1/ripple.shader
 %%QT6%%lib/ADM_plugins6/shaderDemo/1/zigzag.shader
-%%AOM%%lib/ADM_plugins6/videoDecoders/libADM_vd_aom.so
-lib/ADM_plugins6/videoEncoders/libADM_ve_av1aom.so
+@comment %%AOM%%lib/ADM_plugins6/videoDecoders/libADM_vd_aom.so
+%%AOM%%lib/ADM_plugins6/videoEncoders/libADM_ve_av1aom.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_ffDv.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_ffFlv1.so
 lib/ADM_plugins6/videoEncoders/libADM_ve_ffMpeg2.so
