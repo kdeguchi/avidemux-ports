@@ -19,7 +19,7 @@ lib/ADM_plugins6/audioDecoder/libADM_ad_ulaw.so
 %%JACK%%lib/ADM_plugins6/audioDevices/libADM_av_jack.so
 %%OSS%%lib/ADM_plugins6/audioDevices/libADM_av_oss.so
 %%PULSEAUDIO%%lib/ADM_plugins6/audioDevices/libADM_av_pulseAudio.so
-%%FAAC%%lib/ADM_plugins6/audioEncoders/libADM_ae_faac.so
+@comment %%FAAC%%lib/ADM_plugins6/audioEncoders/libADM_ae_faac.so
 %%FDK%%lib/ADM_plugins6/audioEncoders/libADM_ae_fdk_aac.so
 %%LAME%%lib/ADM_plugins6/audioEncoders/libADM_ae_lame.so
 lib/ADM_plugins6/audioEncoders/libADM_ae_lav_aac.so
