@@ -9,6 +9,7 @@ COMMENT=	Simple GUI based video editor (cli)
 LIB_DEPENDS=	libADM6avutil.so.${AVUTIL_VERSION}:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
+OPTIONS_EXCLUDE=	QT5 QT6
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile.common"
