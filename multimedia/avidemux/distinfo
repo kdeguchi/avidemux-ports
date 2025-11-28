@@ -1,5 +1,5 @@
-TIMESTAMP = 1753336252
-SHA256 (mean00-avidemux2-2.8.2-85b0ac0_GH0.tar.gz) = ad2408906c89f0da238b654d291cf607939eacb1ebd68e176eb093e032907ce7
-SIZE (mean00-avidemux2-2.8.2-85b0ac0_GH0.tar.gz) = 25082705
-SHA256 (mean00-avidemux2_i18n-2d1764c_GH0.tar.gz) = 20cea0ca4a5245ddcb710415b8dadce7a59151dd509d95782bf794370636b058
-SIZE (mean00-avidemux2_i18n-2d1764c_GH0.tar.gz) = 2996027
+TIMESTAMP = 1764293136
+SHA256 (mean00-avidemux2-2.8.2-2ba2044_GH0.tar.gz) = eb996c09fdcc7665e8c7d2ed5bac14b080daa0c4eea33ee6d67af6eb70262465
+SIZE (mean00-avidemux2-2.8.2-2ba2044_GH0.tar.gz) = 25082831
+SHA256 (mean00-avidemux2_i18n-b739334_GH0.tar.gz) = e0470d42741402bb3d3f66c2945f5888b06d260072e912d954bed624da6f1b9b
+SIZE (mean00-avidemux2_i18n-b739334_GH0.tar.gz) = 2995460
